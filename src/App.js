@@ -1,20 +1,18 @@
 import { useState, useRef } from 'react';
 import Auth from './components/Auth';
-import Cookies from 'universal-cookie';
 import Chat from './components/Chat';
 import './styles/style.css';
 import { signOut } from 'firebase/auth';
 import { auth } from './firebase/FirebaseConfig';
-const cookies = new Cookies();
 
 function App() {
-  const [isAuth, setIsAuth] = useState(cookies.get('token'));
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('token'));
   const [room, setRoom] = useState(null);
   const inputRef = useRef(null);
 
   const signUserOut = async () => {
     await signOut(auth);
-    cookies.remove('token');
+    localStorage.removeItem('token');
     setIsAuth(null);
     setRoom(null);
   };

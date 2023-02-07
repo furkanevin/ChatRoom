@@ -2,16 +2,13 @@ import React from 'react';
 import { auth, provider } from '../firebase/FirebaseConfig';
 //Giriş yapmak için kullanılıyor
 import { signInWithPopup } from 'firebase/auth';
-import Cookies from 'universal-cookie';
-
-const cookies = new Cookies();
 
 const Auth = ({ setIsAuth }) => {
   const signIn = async () => {
     try {
       const res = await signInWithPopup(auth, provider);
       //   console.log(res);   veriler;
-      cookies.set('token', res.user.refreshToken);
+      localStorage.setItem('token', res.user.refreshToken);
       setIsAuth(true);
     } catch (err) {
       console.log(err);
