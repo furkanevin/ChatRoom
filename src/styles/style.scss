@@ -34,14 +34,19 @@ body {
     font-size: 35px;
   }
   background-color: white;
-  width: 40%;
-  height: 40%;
+  width: 40vh;
+  height: 40vh;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 50px;
+  @include mobile {
+    width: 50vh;
+    height: 40vh;
+    padding: 50px;
+  }
   button {
     display: flex;
     align-items: center;
@@ -149,6 +154,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.509);
+
   @include mobile {
     margin: 20px;
   }
