@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Iceberg&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #252a34;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.auth {
+  background-color: white;
+  width: 40%;
+  height: 40%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.auth h1 {
+  font-family: "Iceberg", cursive;
+  font-size: 35px;
+}
+.auth button {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #08d9d6;
+  color: white;
+  font-weight: 500;
+  font-family: "Inter";
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.509);
+  transition: background-color 0.5s;
+}
+.auth button img {
+  width: 20px;
+}
+.auth button:hover {
+  background-color: #00cbc8;
+  transition: all 0.5s;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.container .room-container {
+  width: 70vh;
+  height: 50vh;
+  background-color: white;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 100px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+@media (max-width: 500px) {
+  .container .room-container {
+    width: 50vh;
+    height: 40vh;
+    margin: 50px;
+    padding: 30px;
+  }
+}
+.container .room-container h1 {
+  font-family: "Iceberg", cursive;
+  font-size: 35px;
+  white-space: nowrap;
+}
+@media (max-width: 500px) {
+  .container .room-container h1 {
+    font-size: 30px;
+  }
+}
+.container .room-container label {
+  font-size: 27px;
+  text-transform: capitalize;
+  text-align: center;
+  white-space: nowrap;
+}
+@media (max-width: 500px) {
+  .container .room-container label {
+    font-size: 20px;
+  }
+}
+.container .room-container input {
+  padding: 7px 14px;
+  border-radius: 10px;
+}
+.container .room-container button {
+  font-family: "inter";
+  background-color: #08d9d6;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.container .room-container button:hover {
+  background-color: #00a7a4;
+  transition: all 0.5s;
+}
+.container .room-container .exit {
+  background-color: red;
+}
+.container .room-container .exit:hover {
+  background-color: rgb(206, 0, 0);
+}
+
+.chat {
+  background-color: white;
+  width: 70vh;
+  height: 70vh;
+  min-width: 300px;
+  min-height: 600px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .chat {
+    margin: 20px;
+  }
+}
+.chat .info {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ff2e63;
+  border-radius: 10px 10px 0 0;
+}
+.chat .info p {
+  color: white;
+}
+.chat .info a {
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: #08d9d6;
+  border: none;
+  font-family: "Inter";
+  color: white;
+  text-shadow: 2px 2px 20px black;
+  cursor: pointer;
+  font-weight: 400;
+  border-radius: 4px;
+  transition: background-color 0.5s;
+}
+.chat .info a:hover {
+  background-color: #00a7a4;
+  transition: all 0.5s;
+}
+.chat .messages {
+  height: 100%;
+  width: 100%;
+  max-width: 70vh;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-x: hidden;
+}
+.chat .messages .message {
+  display: flex;
+  gap: 20px;
+}
+.chat .messages .message .user {
+  font-weight: bold;
+}
+.chat .messages .user-message {
+  display: flex;
+  gap: 20px;
+  flex-direction: row-reverse;
+}
+.chat .messages .user-message .user {
+  font-weight: bold;
+}
+.chat .messages .user-message .text {
+  background-color: #08d9d6;
+  color: #ffffff;
+  padding: 4px;
+  border-radius: 7px 7px 0 7px;
+}
+.chat form {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+.chat form input {
+  margin: 20px;
+  padding: 10px 20px;
+  width: 60%;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.386);
+  outline: none;
+}
+.chat form input:focus {
+  border: 1px solid #08d9d6;
+}
+.chat form button {
+  padding: 10px;
+  background-color: #08d9d6;
+  border: none;
+  border-radius: 10px;
+  font-family: "Inter";
+  color: white;
+  text-shadow: 2px 2px 20px black;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.5s;
+}
+.chat form button:hover {
+  background-color: #00a7a4;
+  transition: all 0.5s;
+}/*# sourceMappingURL=style.css.map */

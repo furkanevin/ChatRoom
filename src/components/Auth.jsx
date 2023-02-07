@@ -1,9 +1,9 @@
 import React from 'react';
-
 import { auth, provider } from '../firebase/FirebaseConfig';
 //Giriş yapmak için kullanılıyor
 import { signInWithPopup } from 'firebase/auth';
 import Cookies from 'universal-cookie';
+
 const cookies = new Cookies();
 
 const Auth = ({ setIsAuth }) => {
@@ -11,15 +11,20 @@ const Auth = ({ setIsAuth }) => {
     try {
       const res = await signInWithPopup(auth, provider);
       //   console.log(res);   veriler;
-      cookies.set('token', res.user._tokenResponse.refreshToken);
+      cookies.set('token', res.user.refreshToken);
+      setIsAuth(true);
     } catch (err) {
       console.log(err);
     }
   };
   return (
-    <div className="">
+    <div className="auth">
+      <h1>Chat Odası</h1>
       <p>Devem Etmek İçin Giriş Yap</p>
-      <button onClick={signIn}>Google ile giriş yap</button>
+      <button onClick={signIn}>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" />
+        Google ile giriş yap
+      </button>
     </div>
   );
 };

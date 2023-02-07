@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@mixin mobile {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 501px) and (max-width: 1000px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (min-width: 1001px) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #252a34;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+//! Giriş Sayfası
+.auth {
+  h1 {
+    font-family: 'Iceberg', cursive;
+    font-size: 35px;
+  }
+  background-color: white;
+  width: 40%;
+  height: 40%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    img {
+      width: 20px;
+    }
+    background-color: #08d9d6;
+    color: white;
+    font-weight: 500;
+    font-family: 'Inter';
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.509);
+    transition: background-color 0.5s;
+    &:hover {
+      background-color: #00cbc8;
+      transition: all 0.5s;
+    }
+  }
+}
+
+//! ODA SEÇME SAYFASI
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  .room-container {
+    width: 70vh;
+    height: 50vh;
+    background-color: white;
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 100px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    @include mobile {
+      width: 50vh;
+      height: 40vh;
+      margin: 50px;
+      padding: 30px;
+    }
+    h1 {
+      font-family: 'Iceberg', cursive;
+      font-size: 35px;
+      white-space: nowrap;
+
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+    label {
+      font-size: 27px;
+      text-transform: capitalize;
+      text-align: center;
+      white-space: nowrap;
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+    input {
+      padding: 7px 14px;
+      border-radius: 10px;
+    }
+    button {
+      font-family: 'inter';
+      background-color: #08d9d6;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.3s;
+      font-weight: 600;
+      letter-spacing: 2px;
+      &:hover {
+        background-color: #00a7a4;
+        transition: all 0.5s;
+      }
+    }
+    .exit {
+      background-color: red;
+      &:hover {
+        background-color: rgb(206, 0, 0);
+      }
+    }
+  }
+}
+
+//! MESAJLAŞMA SAYFASI
+
+.chat {
+  background-color: white;
+  width: 70vh;
+  height: 70vh;
+  min-width: 300px;
+  min-height: 600px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include mobile {
+    margin: 20px;
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ff2e63;
+    border-radius: 10px 10px 0 0;
+    p {
+      color: white;
+    }
+    a {
+      padding: 5px 10px;
+      text-decoration: none;
+      background-color: #08d9d6;
+      border: none;
+      font-family: 'Inter';
+      color: white;
+      text-shadow: 2px 2px 20px black;
+      cursor: pointer;
+      font-weight: 400;
+      border-radius: 4px;
+      transition: background-color 0.5s;
+      &:hover {
+        background-color: #00a7a4;
+        transition: all 0.5s;
+      }
+    }
+  }
+  .messages {
+    height: 100%;
+    width: 100%;
+    max-width: 70vh;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: hidden;
+    .message {
+      display: flex;
+      gap: 20px;
+      .user {
+        font-weight: bold;
+      }
+    }
+    .user-message {
+      display: flex;
+      gap: 20px;
+      flex-direction: row-reverse;
+      .user {
+        font-weight: bold;
+      }
+      .text {
+        background-color: #08d9d6;
+        color: #ffffff;
+        padding: 4px;
+        border-radius: 7px 7px 0 7px;
+      }
+    }
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    input {
+      margin: 20px;
+      padding: 10px 20px;
+      width: 60%;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.386);
+      outline: none;
+      &:focus {
+        border: 1px solid #08d9d6;
+      }
+    }
+    button {
+      padding: 10px;
+      background-color: #08d9d6;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Inter';
+      color: white;
+      text-shadow: 2px 2px 20px black;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.5s;
+      &:hover {
+        background-color: #00a7a4;
+        transition: all 0.5s;
+      }
+    }
+  }
+}
